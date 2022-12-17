@@ -5,16 +5,16 @@ import boardgame.Position;
 import chess.ChessPiece;
 import chess.Color;
 
-public class Rook extends ChessPiece {
+public class Bishop extends ChessPiece {
 
-	public Rook(Board board, Color color) {
+	public Bishop(Board board, Color color) {
 		super(board, color);
 
 	}
 
 	@Override
 	public String toString() {
-		return "R";
+		return "B";
 	}
 
 	@Override
@@ -22,19 +22,10 @@ public class Rook extends ChessPiece {
 		boolean[][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];
 
 		Position pos = new Position(0, 0);
-		pos.setValues(position.getRow() - 1, position.getColumn());
+		pos.setValues(position.getRow() - 1, position.getColumn() -1);
 		while (getBoard().positionExists(pos) && !getBoard().thereIsApiece(pos)) {
 			mat[pos.getRow()][pos.getColumn()] = true;
-			pos.setRow(pos.getRow() - 1);
-		}
-		if (getBoard().positionExists(pos) && isThereOppenentPiece(pos)) {
-			mat[pos.getRow()][pos.getColumn()] = true;
-		}
-		
-		pos.setValues(position.getRow(), position.getColumn() - 1);
-		while (getBoard().positionExists(pos) && !getBoard().thereIsApiece(pos)) {
-			mat[pos.getRow()][pos.getColumn()] = true;
-			pos.setColumn(pos.getColumn() - 1);
+			pos.setValues(pos.getRow() - 1, pos.getColumn() -1);
 		}
 		if (getBoard().positionExists(pos) && isThereOppenentPiece(pos)) {
 			mat[pos.getRow()][pos.getColumn()] = true;
@@ -43,16 +34,25 @@ public class Rook extends ChessPiece {
 		pos.setValues(position.getRow(), position.getColumn() + 1);
 		while (getBoard().positionExists(pos) && !getBoard().thereIsApiece(pos)) {
 			mat[pos.getRow()][pos.getColumn()] = true;
-			pos.setColumn(pos.getColumn() + 1);
+			pos.setValues(pos.getRow() -1, pos.getColumn() + 1);
 		}
 		if (getBoard().positionExists(pos) && isThereOppenentPiece(pos)) {
 			mat[pos.getRow()][pos.getColumn()] = true;
 		}
 		
-		pos.setValues(position.getRow() + 1, position.getColumn());
+		pos.setValues(position.getRow(), position.getColumn() + 1);
 		while (getBoard().positionExists(pos) && !getBoard().thereIsApiece(pos)) {
 			mat[pos.getRow()][pos.getColumn()] = true;
-			pos.setRow(pos.getRow() + 1);
+			pos.setValues(pos.getRow(), pos.getColumn() + 1);
+		}
+		if (getBoard().positionExists(pos) && isThereOppenentPiece(pos)) {
+			mat[pos.getRow()][pos.getColumn()] = true;
+		}
+		
+		pos.setValues(position.getRow() + 1, position.getColumn() - 1);
+		while (getBoard().positionExists(pos) && !getBoard().thereIsApiece(pos)) {
+			mat[pos.getRow()][pos.getColumn()] = true;
+			pos.setValues(pos.getRow() + 1, pos.getColumn() - 1);
 		}
 		if (getBoard().positionExists(pos) && isThereOppenentPiece(pos)) {
 			mat[pos.getRow()][pos.getColumn()] = true;

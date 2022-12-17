@@ -28,42 +28,42 @@ public class King extends ChessPiece{
 		
 		Position pos = new Position(0, 0);
 		
-		pos.setValue(position.getRow() - 1, position.getColumn());
+		pos.setValues(position.getRow() - 1, position.getColumn());
 		if(getBoard().positionExists(pos) && canMove(pos)) {
 			mat[pos.getRow()][pos.getColumn()] = true;
 		}
 		
-		pos.setValue(position.getRow() + 1, position.getColumn());
+		pos.setValues(position.getRow() + 1, position.getColumn());
 		if(getBoard().positionExists(pos) && canMove(pos)) {
 			mat[pos.getRow()][pos.getColumn()] = true;
 		}
 		
-		pos.setValue(position.getRow(), position.getColumn() - 1);
+		pos.setValues(position.getRow(), position.getColumn() - 1);
 		if(getBoard().positionExists(pos) && canMove(pos)) {
 			mat[pos.getRow()][pos.getColumn()] = true;
 		}
 		
-		pos.setValue(position.getRow(), position.getColumn() + 1);
+		pos.setValues(position.getRow(), position.getColumn() + 1);
 		if(getBoard().positionExists(pos) && canMove(pos)) {
 			mat[pos.getRow()][pos.getColumn()] = true;
 		}
 		
-		pos.setValue(position.getRow() - 1, position.getColumn() - 1);
+		pos.setValues(position.getRow() - 1, position.getColumn() - 1);
 		if(getBoard().positionExists(pos) && canMove(pos)) {
 			mat[pos.getRow()][pos.getColumn()] = true;
 		}
 		
-		pos.setValue(position.getRow() - 1, position.getColumn() + 1);
+		pos.setValues(position.getRow() - 1, position.getColumn() + 1);
 		if(getBoard().positionExists(pos) && canMove(pos)) {
 			mat[pos.getRow()][pos.getColumn()] = true;
 		}
 		
-		pos.setValue(position.getRow() + 1, position.getColumn() - 1);
+		pos.setValues(position.getRow() + 1, position.getColumn() - 1);
 		if(getBoard().positionExists(pos) && canMove(pos)) {
 			mat[pos.getRow()][pos.getColumn()] = true;
 		}
 		
-		pos.setValue(position.getRow() + 1, position.getColumn() + 1);
+		pos.setValues(position.getRow() + 1, position.getColumn() + 1);
 		if(getBoard().positionExists(pos) && canMove(pos)) {
 			mat[pos.getRow()][pos.getColumn()] = true;
 		}
