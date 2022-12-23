@@ -45,6 +45,12 @@ public class Program {
 				if(capturedPiece != null) {
 					captured.add(capturedPiece);
 				}
+				
+				if(chessMatch.getProboted() != null) {
+					System.out.print("Entre com a peça promovida (B/N/R/Q): ");
+					String type = sc.nextLine();
+					chessMatch.replacePromotedPiece(type);
+				}
 			}
 			catch(ChessException e) {
 				System.out.println(e.getMessage());
